@@ -5,10 +5,13 @@ const app = express();
 
 app.use(express.json());
 
-// Rourte
+// Routes
 const usersRouter = require('./routes/users');
 app.use('/users', usersRouter);
 
+// OpenSearch Routes
+const openSearchRouter = require('./routes/openSearch');
+app.use('/opensearch', openSearchRouter);
 
 // Try to initialize the database
 try {
